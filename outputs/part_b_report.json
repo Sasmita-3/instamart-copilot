@@ -1,0 +1,208 @@
+{
+  "rfm_summary": {
+    "customers": 1175,
+    "recency_median": 19.0,
+    "recency_min": 0,
+    "recency_max": 180,
+    "frequency_mean": 9.45531914893617,
+    "frequency_max": 33,
+    "monetary_mean": 2552.0585531914894,
+    "monetary_max": 14766.550000000001
+  },
+  "kmeans": [
+    {
+      "k": 2,
+      "inertia": 1820.7605530118508,
+      "silhouette": 0.464971805147615
+    },
+    {
+      "k": 3,
+      "inertia": 1268.2345870687623,
+      "silhouette": 0.4451611905197954
+    },
+    {
+      "k": 4,
+      "inertia": 743.0711078443474,
+      "silhouette": 0.5255443348818724
+    },
+    {
+      "k": 5,
+      "inertia": 617.3666358544998,
+      "silhouette": 0.48049500840771253
+    },
+    {
+      "k": 6,
+      "inertia": 503.17062225816557,
+      "silhouette": 0.4818721636138158
+    },
+    {
+      "k": 7,
+      "inertia": 408.460454419409,
+      "silhouette": 0.4163373417690264
+    },
+    {
+      "k": 8,
+      "inertia": 366.5034865531681,
+      "silhouette": 0.4123290612695322
+    }
+  ],
+  "chosen_k": 4,
+  "segment_profiles": [
+    {
+      "segment_id": 0,
+      "size": 436,
+      "mean_recency": 28.862385321100916,
+      "mean_frequency": 3.772935779816514,
+      "mean_monetary": 1057.618233944954,
+      "segment_name": "Occasional Shoppers",
+      "is_premium": false
+    },
+    {
+      "segment_id": 1,
+      "size": 138,
+      "mean_recency": 24.115942028985508,
+      "mean_frequency": 6.768115942028985,
+      "mean_monetary": 7129.695652173913,
+      "segment_name": "Premium",
+      "is_premium": true
+    },
+    {
+      "segment_id": 2,
+      "size": 419,
+      "mean_recency": 8.766109785202865,
+      "mean_frequency": 19.403341288782816,
+      "mean_monetary": 3410.020525059666,
+      "segment_name": "Frequent Essentials",
+      "is_premium": false
+    },
+    {
+      "segment_id": 3,
+      "size": 182,
+      "mean_recency": 109.04395604395604,
+      "mean_frequency": 2.2032967032967035,
+      "mean_monetary": 685.9925824175824,
+      "segment_name": "Dormant Low-Spend",
+      "is_premium": false
+    }
+  ],
+  "pca_explained_variance_ratio": [
+    0.6342787496047422,
+    0.21803761714547434
+  ],
+  "cohort_size": 1156,
+  "lapsed_count": 443,
+  "lapsed_pct": 38.32179930795848,
+  "train_rows": 924,
+  "test_rows": 232,
+  "baseline": {
+    "accuracy": 0.6163793103448276,
+    "f1_lapsed": 0.0
+  },
+  "logistic": {
+    "best_params": {
+      "model__C": 10
+    },
+    "best_cv_f1": 0.6564709088340102,
+    "test": {
+      "confusion_matrix": [
+        [
+          104,
+          39
+        ],
+        [
+          32,
+          57
+        ]
+      ],
+      "accuracy": 0.6939655172413793,
+      "precision_lapsed": 0.59375,
+      "recall_lapsed": 0.6404494382022472,
+      "f1_lapsed": 0.6162162162162163
+    }
+  },
+  "random_forest": {
+    "best_params": {
+      "model__max_depth": 8,
+      "model__min_samples_leaf": 10
+    },
+    "best_cv_f1": 0.6834873305434798,
+    "test": {
+      "confusion_matrix": [
+        [
+          113,
+          30
+        ],
+        [
+          32,
+          57
+        ]
+      ],
+      "accuracy": 0.7327586206896551,
+      "precision_lapsed": 0.6551724137931034,
+      "recall_lapsed": 0.6404494382022472,
+      "f1_lapsed": 0.6477272727272727
+    }
+  },
+  "selected_model": "random_forest",
+  "balanced_logistic_test": {
+    "confusion_matrix": [
+      [
+        90,
+        53
+      ],
+      [
+        11,
+        78
+      ]
+    ],
+    "accuracy": 0.7241379310344828,
+    "precision_lapsed": 0.5954198473282443,
+    "recall_lapsed": 0.8764044943820225,
+    "f1_lapsed": 0.7090909090909091
+  },
+  "scaler_frequency_train_mean": 8.114718614718615,
+  "full_cohort_frequency_mean": 8.028546712802768,
+  "rf_top_importances": [
+    {
+      "feature": "num__monetary",
+      "importance": 0.28176571740734413
+    },
+    {
+      "feature": "num__frequency",
+      "importance": 0.2743628625271826
+    },
+    {
+      "feature": "num__recency",
+      "importance": 0.11789105594568315
+    },
+    {
+      "feature": "num__avg_delivery",
+      "importance": 0.059368262409519534
+    },
+    {
+      "feature": "num__cancellation_rate",
+      "importance": 0.05407212323442949
+    }
+  ],
+  "lr_coefficient_examples": [
+    {
+      "feature": "num__frequency",
+      "coefficient": -1.5888504064010558,
+      "sign": "negative"
+    },
+    {
+      "feature": "cat__favourite_category_Electronics",
+      "coefficient": -0.8101542542164597,
+      "sign": "negative"
+    },
+    {
+      "feature": "cat__city_Delhi",
+      "coefficient": -0.35245207020792657,
+      "sign": "negative"
+    }
+  ],
+  "reloaded_predictions_exact": true,
+  "retention_rows": 10,
+  "retention_true_lapsed": 1,
+  "limitations": "The retention list is illustrative and not a leakage-free evaluation because Premium uses whole-window RFM, including the September label window."
+}

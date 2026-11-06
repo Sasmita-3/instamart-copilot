@@ -1,0 +1,92 @@
+{
+  "policy": {
+    "chunks": 15,
+    "chunk_counts": {
+      "refund_policy.txt": 4,
+      "delivery_policy.txt": 3,
+      "escalation_policy.txt": 3,
+      "payment_policy.txt": 3,
+      "privacy_policy.txt": 2
+    },
+    "answerable_doc_hits": 12,
+    "answerable_fact_hits": 12,
+    "unanswerable_fallbacks": 2,
+    "zero_overlap_doc_hits": 12,
+    "zero_overlap_fact_hits": 10,
+    "zero_overlap_fallbacks": 2
+  },
+  "scenarios": [
+    {
+      "scenario_id": "S1",
+      "status": "REFUND",
+      "final_answer": "REFUND: INR 128.25 issued.",
+      "llm_calls": 5,
+      "tokens_used": 937,
+      "expected_outcome": "REFUND",
+      "expected_refund_inr": 128.25
+    },
+    {
+      "scenario_id": "S2",
+      "status": "REFUND",
+      "final_answer": "REFUND: INR 135.0 issued.",
+      "llm_calls": 5,
+      "tokens_used": 937,
+      "expected_outcome": "REFUND",
+      "expected_refund_inr": 135.0
+    },
+    {
+      "scenario_id": "S3",
+      "status": "ESCALATE",
+      "final_answer": "ESCALATE: refund above INR 1000 sent to a human lead.",
+      "llm_calls": 5,
+      "tokens_used": 924,
+      "expected_outcome": "ESCALATE",
+      "expected_refund_inr": 1999.0
+    },
+    {
+      "scenario_id": "S4",
+      "status": "DENIED",
+      "final_answer": "DENIED: delivery was within 45 minutes.",
+      "llm_calls": 4,
+      "tokens_used": 637,
+      "expected_outcome": "DENIED",
+      "expected_refund_inr": 0.0
+    },
+    {
+      "scenario_id": "S5",
+      "status": "DENIED",
+      "final_answer": "DENIED: only completed orders can be refunded.",
+      "llm_calls": 3,
+      "tokens_used": 361,
+      "expected_outcome": "DENIED",
+      "expected_refund_inr": 0.0
+    },
+    {
+      "scenario_id": "S6",
+      "status": "NOT_FOUND",
+      "final_answer": "NOT_FOUND: no such order.",
+      "llm_calls": 2,
+      "tokens_used": 88,
+      "expected_outcome": "NOT_FOUND",
+      "expected_refund_inr": 0.0
+    },
+    {
+      "scenario_id": "S7",
+      "status": "FALLBACK_MAX_ITERATIONS",
+      "final_answer": "FALLBACK_MAX_ITERATIONS: Hand off to a human agent; maximum model iterations reached.",
+      "llm_calls": 6,
+      "tokens_used": 3048,
+      "expected_outcome": "FALLBACK",
+      "expected_refund_inr": 0.0
+    }
+  ],
+  "token_limit_demo": "FALLBACK_TOKEN_LIMIT",
+  "timeout_demo": "FALLBACK_TIMEOUT",
+  "crash_resume_status": "REFUND",
+  "crash_resume_tools": [
+    "get_order",
+    "search_policy",
+    "calculate_refund",
+    "issue_refund"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "token_limit_demo": {
+    "status": "FALLBACK_TOKEN_LIMIT",
+    "final_answer": "FALLBACK_TOKEN_LIMIT: Hand off to a human agent; token limit reached.",
+    "llm_calls": 3,
+    "tokens_used": 378
+  },
+  "timeout_demo": {
+    "status": "FALLBACK_TIMEOUT",
+    "final_answer": "FALLBACK_TIMEOUT: Hand off to a human agent; execution time limit reached.",
+    "llm_calls": 0,
+    "tokens_used": 0
+  },
+  "crash_resume": {
+    "status": "REFUND",
+    "final_answer": "REFUND: INR 128.25 issued.",
+    "tools_executed": [
+      "get_order",
+      "search_policy",
+      "calculate_refund",
+      "issue_refund"
+    ],
+    "llm_calls": 5,
+    "tokens_used": 937
+  }
+}

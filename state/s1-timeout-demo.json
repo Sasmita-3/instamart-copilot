@@ -1,0 +1,20 @@
+{
+  "run_id": "s1-timeout-demo",
+  "scenario_id": "S1_TIMEOUT_DEMO",
+  "messages": [
+    {
+      "role": "system",
+      "content": "AGENT: Safely resolve refund requests using the available tools and never issue refunds for ineligible orders."
+    },
+    {
+      "role": "user",
+      "content": "My order ORD-100048 reached me very late. I would like a refund."
+    }
+  ],
+  "tokens_used": 0,
+  "step_number": 0,
+  "steps": [],
+  "llm_calls": 0,
+  "tools_executed": [],
+  "user_message": "My order ORD-100048 reached me very late. I would like a refund."
+}

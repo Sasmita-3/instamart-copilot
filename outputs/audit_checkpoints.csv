@@ -1,0 +1,13 @@
+metric,value
+raw_orders_rows,13084
+exact_duplicate_rows,119
+pending_rows,656
+distinct_order_ids,12309
+non_numeric_amounts,120
+negative_delivery_minutes,106
+blank_delivery_minutes,2541
+blank_age,61
+age_outside_10_100,6
+raw_city_spellings,24
+raw_nonblank_gender_spellings,10
+blank_gender,30
